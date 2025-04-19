@@ -1,10 +1,7 @@
-import '@testing-library/jest-dom';
-import React from "react";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { Formik } from "formik";
 import { FromProducts } from "../index";
 import * as Yup from "yup";
-
 // Define a mock validation schema for testing
 const mockValidationSchema = Yup.object().shape({
   title: Yup.string().required("Title is required"),
