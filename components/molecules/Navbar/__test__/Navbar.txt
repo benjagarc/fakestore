@@ -1,0 +1,24 @@
+// import { render, screen } from "@testing-library/react";
+// import { CustomNavbar } from "..";
+// import { ModalProvider } from "@/components/context/Modal";
+// import { ToastProvider } from "@/components/context/Toast";
+
+// const MockModalProvider = ({ children }: unknown) => (
+//   <ModalProvider>{children}</ModalProvider>
+// );
+
+// const MockToastProvider = ({ children }: unknown) => {
+//   <ToastProvider>{children}</ToastProvider>;
+// };
+// describe("Navbar", () => {
+//   it("renderiza el título", () => {
+//     render(
+//       <MockModalProvider>
+//         <MockToastProvider>
+//           <CustomNavbar />
+//         </MockToastProvider>
+//       </MockModalProvider>
+//     );
+//     expect(screen.getByText("FakeStore")).toBeInTheDocument();
+//   });
+// });

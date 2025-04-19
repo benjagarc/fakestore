@@ -1,0 +1,33 @@
+.customNavbar {
+  background-color: var(--card) !important;
+  & > div div {
+    background-color: var(--card) !important;
+  }
+  & > div > a,
+  & > div div > a {
+    color: var(--text) !important;
+  }
+
+  & > div div > a:hover {
+    background: var(--bg);
+  }
+
+  [aria-label="Toggle navigation"] {
+    border-color: transparent;
+    box-shadow: none !important; 
+    &::before,
+    &::after,
+    span {
+      content: "";
+      display: block;
+      height: 2px;
+      background-color: var(--text);
+      margin: 5px 0;
+      transition: background-color 0.3s ease;
+    }
+
+    span {
+      background-color: var(--text);
+    }
+  }
+}

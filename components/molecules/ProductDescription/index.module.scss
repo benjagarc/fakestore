@@ -1,0 +1,8 @@
+.customBody {
+  background-color: var(--card);
+  color: var(--text) !important;
+  border: none;
+  & > div:nth-child(2) {
+    color: var(--text) !important;
+  }
+}

@@ -1,0 +1,13 @@
+.customBreadcrum {
+  & a {
+    color: var(--text);
+  }
+  
+  & li::before {
+    color: var(--text) !important;
+  }
+
+  & li:last-child{
+    color: var(--accent-hover) !important;
+  }
+}

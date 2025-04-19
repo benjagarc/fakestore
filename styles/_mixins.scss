@@ -1,0 +1,19 @@
+@use "./_colors" as *;
+
+// Theme light
+@mixin theme-light {
+  --bg: #{$bg-light};
+  --text: #{$text-light};
+  --card: #{$card-light};
+  --accent: #{$accent-light};
+  --accent-hover: #{$accent-hover-light};
+}
+
+// Theme dark
+@mixin theme-dark {
+  --bg: #{$bg-dark};
+  --text: #{$text-dark};
+  --card: #{$card-dark};
+  --accent: #{$accent-dark};
+  --accent-hover: #{$accent-hover-dark};
+}

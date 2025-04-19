@@ -1,0 +1,45 @@
+@use "./_colors" as *;
+@use "./_mixins.scss" as *;
+
+:root {
+  @include theme-light;
+}
+
+.dark {
+  @include theme-dark;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card-custom {
+  background-color: var(--card);
+  color: var(--text);
+  border: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.btn-custom {
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &:disabled {
+    background-color: var(--accent-hover) !important;
+  }
+}
+
+.no-decoration {
+  text-decoration: none;
+}
+
+.accent {
+  color: var(--accent) !important;
+}
