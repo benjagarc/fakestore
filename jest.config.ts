@@ -11,10 +11,6 @@ const config: Config = {
     "^@/(.*)$": "<rootDir>/$1",
   },
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
-  // transformIgnorePatterns: [
-  //   '/node_modules/(?!react-bootstrap)/',
-  //   '\\\\node_modules\\\\',
-  // ],
   verbose: true,
   collectCoverage: true,
   coverageDirectory: "coverage",
