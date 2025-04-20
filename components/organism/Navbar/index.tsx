@@ -7,8 +7,8 @@ import styles from "./index.module.scss";
 import { usePathname } from "next/navigation";
 import { useModal } from "@/components/context/Modal";
 import { validationSchemaCreate } from "./schema";
-import { FromProducts } from "../../../molecules/FromProduct";
 import { useToast } from "@/components/context/Toast";
+import FromProducts from "@/components/molecules/FromProduct";
 
 export const CustomNavbar = () => {
   const pathname = usePathname();
