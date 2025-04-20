@@ -17,7 +17,7 @@ export const BreadCrumbCustom: FC<urType> = ({ url }) => {
         className={`${styles.customBreadcrum}`}
       >
         <Breadcrumb.Item linkAs={Link} href={"/"}>
-          Inicio
+          Home
         </Breadcrumb.Item>
 
         {adjustedSegments.map((segment, index) => {
