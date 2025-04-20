@@ -12,7 +12,7 @@ const mockProduct = {
 };
 
 describe("CardProduct", () => {
-  it("Should render whitout erros", () => {
+  it("Should render whitout errors", () => {
     render(<CardProduct {...mockProduct} />);
     expect(screen.getByText(mockProduct.title)).toBeInTheDocument();
   });
