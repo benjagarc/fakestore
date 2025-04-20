@@ -1,4 +1,4 @@
-import { Product } from "@/components/molecules/Card/interface";
+import { ProductInformationProps } from "@/components/organism/ProductInformation/interface";
 
 const API_URL = process.env.API_URL;
 
@@ -10,7 +10,7 @@ export const handleResponse = async (res: Response) => {
   return res.json();
 };
 
-export const getAllProducts = async (): Promise<Product[]> => {
+export const getAllProducts = async (): Promise<ProductInformationProps[]> => {
   const response = await fetch(`${API_URL}/products`, {
     method: "get",
   });

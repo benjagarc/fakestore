@@ -1,17 +1,23 @@
-import { Product } from "@/components/molecules/Card/interface";
 import { ProductActions } from "./interface";
+import { ProductInformationProps } from "@/components/organism/ProductInformation/interface";
 
-export const setProducts = (payload: Product[]): ProductActions => ({
+export const setProducts = (
+  payload: ProductInformationProps[]
+): ProductActions => ({
   type: "SET",
   payload,
 });
 
-export const addProduct = (payload: Product): ProductActions => ({
+export const addProduct = (
+  payload: ProductInformationProps
+): ProductActions => ({
   type: "ADD",
   payload,
 });
 
-export const updateProduct = (payload: Product): ProductActions => ({
+export const updateProduct = (
+  payload: ProductInformationProps
+): ProductActions => ({
   type: "UPDATE",
   payload,
 });

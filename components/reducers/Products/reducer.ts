@@ -1,12 +1,12 @@
-import { Product } from "@/components/molecules/Card/interface";
 import { ProductActions } from "./interface";
 import { saveInitialProducts } from "@/utils/storage";
+import { ProductInformationProps } from "@/components/organism/ProductInformation/interface";
 
 export const productReducer = (
-  state: Product[],
+  state: ProductInformationProps[],
   action: ProductActions
-): Product[] => {
-  let newState: Product[];
+): ProductInformationProps[] => {
+  let newState: ProductInformationProps[];
   switch (action.type) {
     case "SET":
       return action.payload;
