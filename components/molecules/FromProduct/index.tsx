@@ -21,7 +21,6 @@ export const FromProducts: FC<FormProductType> = ({
           await setLoading((prev) => !prev);
           await onSubmit(values);
           await setLoading((prev) => !prev);
-
         }}
         validationSchema={validationSchema}
         enableReinitialize
@@ -86,6 +85,7 @@ export const FromProducts: FC<FormProductType> = ({
                 onBlur={handleBlur}
                 isInvalid={touched.category && !!errors.category}
               >
+                <option value="">Select category</option>
                 {categories.map((category) => (
                   <option key={category} value={category}>
                     {category}
