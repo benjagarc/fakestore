@@ -7,6 +7,7 @@ import Container from "react-bootstrap/Container";
 import { ModalProvider } from "@/components/context/Modal";
 import { ToastProvider } from "@/components/context/Toast";
 import CustomNavbar from "@/components/organism/Navbar";
+import { ProductProvider } from "@/components/reducers/Products";
 
 export const metadata: Metadata = {
   title: "Fake Store",
@@ -21,13 +22,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ToastProvider>
-          <ModalProvider>
-            <CustomNavbar />
-            <Container className="py-4 pt-5 mt-5">{children}</Container>
-            <ThemeToggle />
-          </ModalProvider>
-        </ToastProvider>
+        <ProductProvider>
+          <ToastProvider>
+            <ModalProvider>
+              <CustomNavbar />
+              <Container className="py-4 pt-5 mt-5">{children}</Container>
+              <ThemeToggle />
+            </ModalProvider>
+          </ToastProvider>
+        </ProductProvider>
       </body>
     </html>
   );
