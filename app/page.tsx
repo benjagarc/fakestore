@@ -5,6 +5,7 @@ import { getAllProducts } from "@/request/products";
 import Spinner from "react-bootstrap/esm/Spinner";
 import Row from "react-bootstrap/Row";
 import Card from "@/components/molecules/Card";
+import { getStoredProducts, saveInitialProducts } from "@/utils/storage";
 
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -13,8 +14,17 @@ export default function Home() {
   useEffect(() => {
     const getData = async () => {
       await setLoading((prev) => !prev);
-      const data = await getAllProducts();
-      setProducts(() => data);
+      try {
+        if (getStoredProducts().length === 0) {
+          const data = await getAllProducts();
+          saveInitialProducts(data);
+          setProducts(() => data);
+        } else {
+          setProducts(() => getStoredProducts());
+        }
+      } catch (e) {
+        console.error(e);
+      }
       await setLoading((prev) => !prev);
     };
     getData();
