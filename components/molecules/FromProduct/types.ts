@@ -5,6 +5,6 @@ export type FormProductType = {
   onClose: () => void;
   form: string;
   validationSchema: unknown;
-  onSubmit: (product: Partial<Product>) => void;
+  onSubmit: (product: Product) => void;
   categories: string[];
 };
