@@ -8,7 +8,7 @@ import styles from "./index.module.scss";
 import Link from "next/link";
 
 export const CardProduct: FC<Product> = ({
-  // image, optiona image
+  // image, optional image
   title,
   price,
   description,
@@ -22,6 +22,7 @@ export const CardProduct: FC<Product> = ({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
           className="h-100 shadow-sm"
+          data-testid="motion-div" 
         >
           <Link href={`/product/${id}`} className="no-decoration">
             <Card className={`${styles.cardCustom} h-100`}>
