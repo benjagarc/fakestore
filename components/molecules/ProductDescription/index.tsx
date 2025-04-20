@@ -1,11 +1,10 @@
 "use client";
 
 import { FC, memo } from "react";
-import Card from "react-bootstrap/esm/Card";
 import { StarRating } from "@/components/atoms/StartRating";
-import Button from "react-bootstrap/esm/Button";
 import { ProductDescriptionProps } from "./interface";
 import styles from "./index.module.scss";
+import { Button, Card } from "react-bootstrap";
 
 export const ProductDescription: FC<ProductDescriptionProps> = ({
   title,
