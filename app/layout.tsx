@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@/styles/_theme.scss";
 import ThemeToggle from "@/components/atoms/ThemeToggle";
-import CustomNavbar from "@/components/molecules/Navbar";
+import CustomNavbar from "@/components/organism/ProductInformation/Navbar";
 import Container from "react-bootstrap/Container";
 import { ModalProvider } from "@/components/context/Modal";
 import { ToastProvider } from "@/components/context/Toast";
