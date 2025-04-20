@@ -17,9 +17,11 @@ export const FromProducts: FC<FormProductType> = ({
       <h4 className="mb-3">{form}</h4>
       <Formik
         initialValues={product}
-        onSubmit={(values) => {
-          setLoading((prev) => !prev);
-          onSubmit(values);
+        onSubmit={async (values) => {
+          await setLoading((prev) => !prev);
+          await onSubmit(values);
+          await setLoading((prev) => !prev);
+
         }}
         validationSchema={validationSchema}
         enableReinitialize
