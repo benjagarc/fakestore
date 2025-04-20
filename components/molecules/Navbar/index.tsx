@@ -2,12 +2,8 @@
 
 import { createProduct, getCategories } from "@/request/products";
 import { memo, useEffect, useState } from "react";
-import Container from "react-bootstrap/esm/Container";
-import Nav from "react-bootstrap/esm/Nav";
-import NavDropdown from "react-bootstrap/esm/NavDropdown";
-import Navbar from "react-bootstrap/Navbar";
+import { Container, Nav, Navbar, NavDropdown, Button } from "react-bootstrap";
 import styles from "./index.module.scss";
-import Button from "react-bootstrap/esm/Button";
 import { usePathname } from "next/navigation";
 import { useModal } from "@/components/context/Modal";
 import { validationSchemaCreate } from "./schema";
