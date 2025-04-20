@@ -1,6 +1,6 @@
 import { FC, memo } from "react";
 import { MessageModalProps } from "./interface";
-import Button from "react-bootstrap/esm/Button";
+import { Button } from "react-bootstrap";
 
 export const MessageModal: FC<MessageModalProps> = ({
   title,
