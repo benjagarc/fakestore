@@ -1,38 +1,16 @@
 "use client";
-import { useEffect, useState } from "react";
-import { Product } from "@/components/molecules/Card/interface";
-import { getAllProducts } from "@/request/products";
-import Spinner from "react-bootstrap/esm/Spinner";
+
 import Row from "react-bootstrap/Row";
 import Card from "@/components/molecules/Card";
-import { getStoredProducts, saveInitialProducts } from "@/utils/storage";
+import { useProducts } from "@/components/reducers/Products";
+import { Spinner } from "react-bootstrap";
 
 export default function Home() {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const getData = async () => {
-      await setLoading((prev) => !prev);
-      try {
-        if (getStoredProducts().length === 0) {
-          const data = await getAllProducts();
-          saveInitialProducts(data);
-          setProducts(() => data);
-        } else {
-          setProducts(() => getStoredProducts());
-        }
-      } catch (e) {
-        console.error(e);
-      }
-      await setLoading((prev) => !prev);
-    };
-    getData();
-  }, []);
+  const { products } = useProducts();
 
   return (
     <>
-      {loading && (
+      {products?.length === 0 && (
         <div className="text-center">
           <Spinner animation="border" variant="primary" />
         </div>
