@@ -9,8 +9,5 @@ export const getStoredProducts = (): ProductInformationProps[] => {
 };
 
 export const saveInitialProducts = (products: ProductInformationProps[]) => {
-  const stored = localStorage.getItem("products");
-  if (!stored) {
-    localStorage.setItem("products", JSON.stringify(products));
-  }
+  localStorage.setItem("products", JSON.stringify(products));
 };
