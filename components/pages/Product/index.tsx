@@ -19,7 +19,7 @@ export const PageProduct = ({ id }: { id: number | string }) => {
           <ProductInformation {...product} />
         </Container>
       ) : (
-        <Container className={`card-custom d-flex ${styles.productError}`}>
+        <Container className={`card-custom d-flex h4 ${styles.productError}`}>
           <h1>Product does not exist</h1>
           <div>
             <Link href={"/"}>Go to home</Link>
