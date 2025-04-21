@@ -86,3 +86,9 @@ This application employs the `useReducer` hook for managing its state. The follo
 - **`"DELETE"`:** This action is used to remove items or data from the application's state. The payload typically includes the identifier of the item to be deleted.
 
 By using these actions with `useReducer`, the application provides a predictable and centralized way to manage its data flow and state changes, making it easier to understand and maintain the application's behavior. You can find the implementation of the reducer function and these actions within the project's state management related files or React components.
+
+## 🌐 Demo
+
+This project is deployed on Netlify.
+You can check out the live demo here:
+👉 https://bg-fakestore.netlify.app/
