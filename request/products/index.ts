@@ -13,12 +13,16 @@ export const handleResponse = async (res: Response) => {
 export const getAllProducts = async (): Promise<ProductInformationProps[]> => {
   const response = await fetch(`${API_URL}/products`, {
     method: "get",
+    cache: "force-cache",
   });
   return handleResponse(response);
 };
 
 export const getCategories = async () => {
-  const response = await fetch(`${API_URL}/products/categories`);
+  const response = await fetch(`${API_URL}/products/categories`, {
+    method: "GET",
+    cache: "force-cache",
+  });
   return handleResponse(response);
 };
 
