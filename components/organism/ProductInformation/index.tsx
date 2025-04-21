@@ -20,7 +20,10 @@ import { useToast } from "@/components/context/Toast";
 import { useRouter } from "next/navigation";
 import { ProductInformationProps } from "./interface";
 import { useProducts } from "@/components/reducers/Products";
-import { deleteProduct } from "@/components/reducers/Products/actions";
+import {
+  deleteProduct,
+  updateProduct,
+} from "@/components/reducers/Products/actions";
 
 export const ProductInformation: FC<ProductInformationProps> = (product) => {
   const { showModal, hideModal } = useModal();
@@ -57,6 +60,7 @@ export const ProductInformation: FC<ProductInformationProps> = (product) => {
             );
             setUpdatedProduct((prev) => ({ ...prev, ...values }));
             await showToast("Product updated successfully", "success");
+            await dispatch(updateProduct({ ...product, ...values }));
           } catch (e) {
             console.error(e);
             showToast("Failed to update the product", "danger");
