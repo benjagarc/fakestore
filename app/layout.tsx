@@ -12,6 +12,9 @@ import { ProductProvider } from "@/components/reducers/Products";
 export const metadata: Metadata = {
   title: "Fake Store",
   description: "Fake store test",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
