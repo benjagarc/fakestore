@@ -4,7 +4,7 @@ import {
   createContext,
   ReactNode,
   useContext,
-  useEffect,
+  useLayoutEffect,
   useReducer,
 } from "react";
 import { productReducer } from "./reducer";
@@ -17,7 +17,7 @@ const ProductContext = createContext<ProductContextType | undefined>(undefined);
 export const ProductProvider = ({ children }: { children: ReactNode }) => {
   const [products, dispatch] = useReducer(productReducer, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const load = async () => {
       const stored = getStoredProducts();
       if (!stored.length) {
