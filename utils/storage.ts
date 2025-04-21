@@ -9,5 +9,5 @@ export const getStoredProducts = (): ProductInformationProps[] => {
 };
 
 export const saveInitialProducts = (products: ProductInformationProps[]) => {
-  localStorage.setItem("products", JSON.stringify(products));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(products));
 };
