@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -10,7 +11,14 @@ const nextConfig: NextConfig = {
     API_URL: process.env.API_URL,
   },
   images: {
-    remotePatterns: [new URL("https://fakestoreapi.com/img/**"),new URL("https://cdn.arihantbooks.com/assets/ProductImage/**")],
+    remotePatterns: [
+      new URL("https://fakestoreapi.com/img/**"),
+      new URL("https://cdn.arihantbooks.com/assets/ProductImage/**"),
+    ],
+  },
+  webpack: (config) => {
+    config.resolve.alias["@"] = path.resolve(__dirname);
+    return config;
   },
 };
 
