@@ -26,3 +26,19 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Running Tests
+
+This project uses **Jest** as the test runner and **React Testing Library** for testing React components.
+
+To run the tests, use one of the following commands in your terminal (make sure the development server is NOT running simultaneously on the same terminal window):
+
+```bash
+npm test
+# or
+yarn test
+# or
+pnpm test
+# or
+bun test
+```
