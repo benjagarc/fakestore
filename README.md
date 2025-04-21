@@ -8,7 +8,7 @@ To get started with the project locally, please follow these steps:
     - Add the following variable to your `.env.local` file:
 
       ```
-      API_URL=[https://fakestoreapi.com](https://fakestoreapi.com)
+      API_URL=https://fakestoreapi.com
       ```
 
       This variable specifies the base URL for the Fake Store API that the application will use.
