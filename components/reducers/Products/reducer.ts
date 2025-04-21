@@ -1,5 +1,5 @@
 import { ProductActions } from "./interface";
-import { saveInitialProducts } from "@/utils/storage";
+import { saveProducts } from "@/utils/storage";
 import { ProductInformationProps } from "@/components/organism/ProductInformation/interface";
 
 export const productReducer = (
@@ -24,6 +24,6 @@ export const productReducer = (
     default:
       return state;
   }
-  saveInitialProducts(newState);
+  saveProducts(newState);
   return newState;
 };

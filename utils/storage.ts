@@ -8,6 +8,6 @@ export const getStoredProducts = (): ProductInformationProps[] => {
   return data ? JSON.parse(data) : [];
 };
 
-export const saveInitialProducts = (products: ProductInformationProps[]) => {
+export const saveProducts = (products: ProductInformationProps[]) => {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(products));
 };

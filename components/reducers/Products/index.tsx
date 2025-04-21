@@ -8,7 +8,7 @@ import {
   useReducer,
 } from "react";
 import { productReducer } from "./reducer";
-import { getStoredProducts, saveInitialProducts } from "@/utils/storage";
+import { getStoredProducts, saveProducts } from "@/utils/storage";
 import { ProductContextType } from "./interface";
 import { getAllProducts } from "@/request/products";
 
@@ -22,7 +22,7 @@ export const ProductProvider = ({ children }: { children: ReactNode }) => {
       const stored = getStoredProducts();
       if (!stored.length) {
         const data = await getAllProducts();
-        saveInitialProducts(data);
+        saveProducts(data);
         dispatch({ type: "SET", payload: data });
       } else {
         dispatch({ type: "SET", payload: stored });
