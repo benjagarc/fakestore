@@ -19,6 +19,8 @@ import MessageModal from "@/components/molecules/MessageModal";
 import { useToast } from "@/components/context/Toast";
 import { useRouter } from "next/navigation";
 import { ProductInformationProps } from "./interface";
+import { useProducts } from "@/components/reducers/Products";
+import { deleteProduct } from "@/components/reducers/Products/actions";
 
 export const ProductInformation: FC<ProductInformationProps> = (product) => {
   const { showModal, hideModal } = useModal();
@@ -27,6 +29,7 @@ export const ProductInformation: FC<ProductInformationProps> = (product) => {
   const [updatedProduct, setUpdatedProduct] =
     useState<ProductInformationProps>(product);
   const router = useRouter();
+  const { dispatch } = useProducts();
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -75,6 +78,7 @@ export const ProductInformation: FC<ProductInformationProps> = (product) => {
           try {
             await deleteProductById(updatedProduct.id);
             await showToast("Product deleted successfully", "success");
+            await dispatch(deleteProduct(updatedProduct.id));
             await router.push(`/category/${product.category}`);
           } catch (e) {
             console.error(e);
