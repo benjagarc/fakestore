@@ -9,12 +9,15 @@ import { useModal } from "@/components/context/Modal";
 import { validationSchemaCreate } from "./schema";
 import { useToast } from "@/components/context/Toast";
 import FromProducts from "@/components/molecules/FromProduct";
+import { useProducts } from "@/components/reducers/Products";
+import { addProduct } from "@/components/reducers/Products/actions";
 
 export const CustomNavbar = () => {
   const pathname = usePathname();
   const [categories, setCategories] = useState<string[]>([]);
   const { showModal, hideModal } = useModal();
   const { showToast } = useToast();
+  const { dispatch } = useProducts();
   useEffect(() => {
     const fetchCategories = async () => {
       const data = await getCategories();
@@ -50,8 +53,17 @@ export const CustomNavbar = () => {
               : values;
             await createProduct(JSON.stringify({ validateValues }));
             await showToast("Product created successfully", "success");
+            const newProduct = {
+              ...validateValues,
+              rating: {
+                count: Math.floor(Math.random() * 100),
+                rate: +(Math.random() * (5 - 1) + 1).toFixed(2),
+              },
+            };
+
+            dispatch(addProduct(newProduct));
           } catch (e) {
-            console.log(e);
+            console.error(e);
             showToast("Failed to update the product", "danger");
           }
           await hideModal();
