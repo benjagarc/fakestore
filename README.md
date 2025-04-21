@@ -1,31 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
 ## Getting Started
 
-First, you need to configure the environment variables for the project:
+To get started with the project locally, please follow these steps:
 
-1.  **Create a `.env.local` file** in the root directory of your project if it doesn't already exist.
-2.  **Add the following variable** to your `.env.local` file:
+1.  **Configure Environment Variables:**
+
+    - Create a `.env.local` file in the root directory of your project if it doesn't already exist.
+    - Add the following variable to your `.env.local` file:
+
+      ```
+      API_URL=[https://fakestoreapi.com](https://fakestoreapi.com)
+      ```
+
+      This variable specifies the base URL for the Fake Store API that the application will use.
+
+2.  **Install Dependencies:**
+    Navigate to the project directory in your terminal and run **one** of the following commands, depending on your preferred package manager:
+
+    ```bash
+    npm install
+    # or
+    yarn install
+    # or
+    pnpm install
+    # or
+    bun install
 
     ```
-    API_URL=[https://fakestoreapi.com](https://fakestoreapi.com)
+
+3.  **Run the Development Server:**
+    Once the dependencies are installed, you can start the development server using one of these commands:
+
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    # or
+    pnpm dev
+    # or
+    bun dev
     ```
 
-    This variable specifies the base URL for the Fake Store API that the application will use.
+4.  **Open in Browser:**
+    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-After configuring the environment variables, you can run the development server:
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Running Tests
 
