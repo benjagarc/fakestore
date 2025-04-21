@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import Breadcrumb from "@/components/molecules/Breadcrumb";
 import Container from "react-bootstrap/esm/Container";
-import PageCategory from "@/components/pages/Category";
+import { PageCategory } from "@/components/pages/Category";
 
 type Params = Promise<{ category: string }>;
 export async function generateMetadata({
