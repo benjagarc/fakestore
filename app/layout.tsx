@@ -22,15 +22,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ProductProvider>
-          <ToastProvider>
-            <ModalProvider>
+        <ToastProvider>
+          <ModalProvider>
+            <ProductProvider>
               <CustomNavbar />
               <Container className="py-4 pt-5 mt-5">{children}</Container>
-              <ThemeToggle />
-            </ModalProvider>
-          </ToastProvider>
-        </ProductProvider>
+            </ProductProvider>
+            <ThemeToggle />
+          </ModalProvider>
+        </ToastProvider>
       </body>
     </html>
   );
